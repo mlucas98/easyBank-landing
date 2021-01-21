@@ -1,0 +1,22 @@
+// Breakpoints
+@media (min-width: 64em) {
+    // styles
+}
+
+// sass map. from this point bigger -> use this styles
+// 640px / 16 - 1024 - 1400
+$breakpoints-up: ("medium": "40em", 'large': "64em", "xlarge": "87.5");
+@mixin breakpoint-up ($size) {
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
+
+//From this point down
+// smaller than 40em, for example
+$breakpoints-down: ("small": "39.975em", "medium": "63.975em", "large": "87.4375");
+@mixin breakpoint-down ($size) {
+    @media (max-width: map-get($breakpoints-down, $size)) {
+        @content;
+    }
+}
