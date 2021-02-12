@@ -80,15 +80,6 @@
             }
         }
     }
-    &__cta {
-        font-size: $font-sm;
-        color: $white;
-        opacity: 1;
-        transition: opacity 300ms ease-in-out;
-        &:hover {
-            opacity: 0.7;
-        }
-    }
     &__mobile-menu {
         position: absolute;
         width: calc(100% - 3rem); //3 rem is two times 1.5 which is global padding
