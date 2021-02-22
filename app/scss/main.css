@@ -109,6 +109,34 @@ h1,
 h2,
 h3 {
   margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+  font-size: 2.31rem;
+  line-height: 1.15;
+  color: #2d314d;
+}
+
+@media (min-width: 64em) {
+  h1 {
+    font-size: 3.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+}
+
+@media (min-width: 64em) {
+  h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
 }
 
 a,
@@ -418,23 +446,14 @@ button:hover,
   }
 }
 
-.hero__text h1 {
-  margin-bottom: 1.5rem;
-  font-weight: 300;
-  font-size: 2.31rem;
-  line-height: 1.15;
-  color: #2d314d;
+.feature__intro {
+  margin-bottom: 3.75rem;
 }
 
 @media (min-width: 64em) {
-  .hero__text h1 {
-    font-size: 3.25rem;
+  .feature__intro {
+    width: 60%;
   }
-}
-
-.hero__text p {
-  line-height: 1.5;
-  margin-bottom: 2.25rem;
 }
 
 @media (min-width: 40em) {
