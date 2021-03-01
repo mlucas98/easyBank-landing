@@ -3,6 +3,14 @@
     color: $white;
     padding: 2.5rem;
     text-align: center;
+
+    @include breakpoint-up(large){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 2fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas: "logo links1 links2 cta"
+        "social links1 links2 cta";  // names of the areas in the grid from left to right, row-styled
+    }
     a{
         color: $white;
         line-height: 2.25;
@@ -10,6 +18,9 @@
     &__logo{
         display: inline-block;
         margin-bottom: 1.75rem;
+        @include breakpoint-up(large){
+            grid-area: logo;    // link the area name
+        }
     }
     &__social{
         margin-bottom: 1.75rem;
@@ -19,18 +30,29 @@
         a:not(:last-child) {
             margin-right: 1rem;
         }
+        @include breakpoint-up(large){
+            grid-area: social;
+        }
     }
     &__links{
         display: flex;
         flex-direction: column;
         align-items: center;
-        &.col-1{}
+        &.col-1{
+            @include breakpoint-up(large){
+                grid-area: links1;
+            }}
         &.col-2{
             margin-bottom: 1.75rem;
+            @include breakpoint-up(large){
+                grid-area: links2;
+            }
         }
     }
     &__cta{
         margin-bottom: 1.75rem;
+        @include breakpoint-up(large){
+            grid-area: cta;
+        }
     }
-    &__copy{}
 }
