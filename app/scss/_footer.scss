@@ -3,56 +3,93 @@
     color: $white;
     padding: 2.5rem;
     text-align: center;
-
-    @include breakpoint-up(large){
-        display: grid;
-        grid-template-columns: repeat(3, 1fr) 2fr;
-        grid-template-rows: repeat(2, 1fr);
-        grid-template-areas: "logo links1 links2 cta"
-        "social links1 links2 cta";  // names of the areas in the grid from left to right, row-styled
-    }
+    
     a{
         color: $white;
-        line-height: 2.25;
+        @include breakpoint-down(medium){    
+            line-height: 2.25;
+        }
+    }
+
+    .container{
+        @include breakpoint-up(large){
+            display: grid;
+            grid-template-columns: repeat(3, 1fr) 2fr;
+            grid-template-rows: 1fr, auto;
+            grid-template-areas: "logo links1 links2 cta"
+            "social links1 links2 copy";  // names of the areas in the grid from left to right, row-styled
+            justify-items: start;   // left aligned
+        }
     }
     &__logo{
         display: inline-block;
-        margin-bottom: 1.75rem;
+        @include breakpoint-down(medium){
+            margin-bottom: 1.75rem;
+        }
         @include breakpoint-up(large){
             grid-area: logo;    // link the area name
         }
     }
     &__social{
-        margin-bottom: 1.75rem;
-        a {
-            display: inline-block;
-        }
-        a:not(:last-child) {
-            margin-right: 1rem;
+        @include breakpoint-down(medium){
+            margin-bottom: 1.75rem;
         }
         @include breakpoint-up(large){
             grid-area: social;
+            align-self: end;
+        }
+
+        a {
+            display: inline-block;
+            height: 1.25rem;
+        }
+        a:not(:last-child) {
+            margin-right: 1rem;
         }
     }
     &__links{
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-size: 0.9375rem;
+        
+        @include breakpoint-up(large){
+            justify-content: space-between;
+            align-items: start; // on desktop, they'll go left
+        }
         &.col-1{
             @include breakpoint-up(large){
                 grid-area: links1;
             }}
         &.col-2{
-            margin-bottom: 1.75rem;
+            @include breakpoint-down(medium){
+                margin-bottom: 1.75rem;
+            }
             @include breakpoint-up(large){
                 grid-area: links2;
             }
         }
     }
     &__cta{
-        margin-bottom: 1.75rem;
         @include breakpoint-up(large){
             grid-area: cta;
+            justify-self: end;  // align grid-self-item to the right
+            text-align: right;
+        }
+
+        a.button{
+            @include breakpoint-down(medium){
+                margin-bottom: 1.75rem;
+            }
+        }
+    }
+    &__copy {
+        font-size: 0.9375rem;
+        @include breakpoint-up(large){
+            grid-area: copy;
+            justify-self: end;  // X
+            align-self: end;    // Y
+            text-align: right;
         }
     }
 }
