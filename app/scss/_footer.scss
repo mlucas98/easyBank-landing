@@ -14,11 +14,12 @@
     .container{
         @include breakpoint-up(large){
             display: grid;
-            grid-template-columns: repeat(3, 1fr) 2fr;
+            grid-template-columns: 2fr repeat(2, 1fr) 2fr;
             grid-template-rows: 1fr, auto;
             grid-template-areas: "logo links1 links2 cta"
             "social links1 links2 copy";  // names of the areas in the grid from left to right, row-styled
             justify-items: start;   // left aligned
+            gap: 1rem;
         }
     }
     &__logo{
@@ -42,9 +43,16 @@
         a {
             display: inline-block;
             height: 1.25rem;
+
+            svg path {
+                transition: fill 150ms ease-in-out;
+            }
         }
         a:not(:last-child) {
             margin-right: 1rem;
+        }
+        & a:hover svg path{
+            fill: $limeGreen;
         }
     }
     &__links{
@@ -69,6 +77,14 @@
                 grid-area: links2;
             }
         }
+
+        a {
+            line-height: 2.25rem;
+            transition: color 150ms ease-in-out;
+        }
+        a:hover {
+            color: $limeGreen;
+        }
     }
     &__cta{
         @include breakpoint-up(large){
@@ -84,7 +100,8 @@
         }
     }
     &__copy {
-        font-size: 0.9375rem;
+        font-size: 0.8125rem;
+        color: $grayishBlue;
         @include breakpoint-up(large){
             grid-area: copy;
             justify-self: end;  // X
