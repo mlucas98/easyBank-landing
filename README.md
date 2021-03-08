@@ -2,6 +2,11 @@
 
 ![Design preview for the Easybank landing page coding challenge](./design/desktop-preview.jpg)
 
+## The following challenge was taken out from Frontend Mentor
+Also, I did it while whatching Jessica Chan from CoderCoder who did it too and uploaded a tutorial into [FreeCodeCamp's YouTube channel](https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ). It was super fun to code and I've learned a lot.
+Below I leave the ReadMe exactly as I got it from the challenge.
+
+
 ## Welcome! 👋
 
 Thanks for checking out this front-end coding challenge.
